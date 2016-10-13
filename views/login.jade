@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    title Document
+    link(rel="stylesheet",href="style/bootstrap.min.css")
+    link(rel="stylesheet", href="style/login.css")
+body
+    form(action="/login" method="post")
+        .form-box
+            .form-group
+                label 邮箱
+                input#email.form-control(type='text',name="email")
+                span#info
+            .form-group
+                label 密码
+                input.form-control(type='password',name="password")
+            button.btn.btn-primary 登陆
+            h3 #{info}
+    script(type='text/javascript', src='script/jquery.js')
+    script(type='text/javascript').
+        var re = /^[0-9a-zA-Z\\_]{5,11}\@qq\.com$/;
+        $("#email").blur(function () {
+                var txt = $(this).val();
+                var result = re.test(txt);
+                var p = checkinput(result)
+                $("#info").html(p)
+        })
+        function checkinput(bool) {
+            var right = "<p class='right'>格式正确</p>";
+            var wrong = "<p class='wrong'>请输入正确的邮箱格式</p>";
+            if (bool) {
+                return right
+            } else {
+                return wrong
+            }
+        }
+
+
+

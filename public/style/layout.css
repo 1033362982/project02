@@ -1,0 +1,24 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.clear{
+    clear: both;
+}
+nav{
+    height: 100px;
+    background-color: red;
+}
+nav #list{
+    float: left;
+}
+nav #list li{
+    float: left;
+    font-size: 50px;
+    padding-right:30px;
+    list-style-type: none;
+}
+nav p{
+    float: right;
+    font-size:50px;
+}

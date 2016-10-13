@@ -1,0 +1,56 @@
+extends layout
+block content
+    link(rel="stylesheet", href="style/bootstrap.min.css")
+    link(rel="stylesheet", href="style/student.css")
+    // Button trigger modal
+    button.insertdata.btn.btn-primary 添加数据
+    button.successsort.btn.btn-primary 按成绩排序
+    button.agesort.btn.btn-primary 按年龄排序
+    button.sexmale.btn.btn-primary 筛选(男)
+    button.sexfemale.btn.btn-primary 筛选(女)
+    // Modal
+    table.table.table-bordered.table-hover
+        thead
+            th 学号
+            th 姓名
+            th 年龄
+            th 性别
+            th 成绩
+            th 删除
+            th 修改
+        tbody
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span(aria-hidden='true') ×
+                    h4.modal-title 添加/修改数据
+                .modal-body
+                    form.myform
+                        .form-group
+                            label 学号
+                            input.number.form-control(type='text',name="number")
+                        .form-group
+                            label 姓名
+                            input.form-control(type='text',name="name")
+                        .form-group
+                            label 年龄
+                            input.form-control(type='text',name="age")
+                        .form-group
+                            label#sex 性别
+                            .sex-box
+                                label(for='')
+                                    input(type='radio', name='sex', value='男')
+                                    |                 男
+                                label(for='')
+                                    input(type='radio', name='sex', value='女')
+                                    |                 女
+                        .form-group
+                            label 成绩
+                            input.form-control(type='text',name="success")
+                        button.btn.btn-primary(type='submit') 添加/修改
+    script(src="script/jquery.js")
+    script(src="script/bootstrap.min.js")
+    script(src="script/students.js")
+

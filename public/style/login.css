@@ -1,0 +1,18 @@
+.right{
+    color:green
+}
+.wrong{
+    color:red
+}
+form{
+    width:500px;
+    margin: 0 auto;
+    margin-top: 200px;
+    border:1px solid #cccccc;
+    border-radius: 25px;
+}
+.form-box{
+    width: 300px;
+    margin: 0 auto;
+    padding:50px 0px;
+}
